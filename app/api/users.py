@@ -19,7 +19,7 @@ def get_db():
 
 
 @router.post("/", response_model=UserRead)
-def create(user_in: UserCreate, db: Session = Depends(get_db())):
+def create(user_in: UserCreate, db: Session = Depends(get_db)):
     return create_user(db, user_in)
 
 
